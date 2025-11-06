@@ -41,11 +41,10 @@ Thank you for your interest in contributing! We welcome all kinds of contributio
    pnpm install
    ```
 
-5. **Start development server**
+5. **Build the extension**
    ```bash
-   just dev
+   just build
    ```
-   This starts Vite with HMR on `localhost:5173`
 
 6. **Load extension in Chrome**
    - Go to `chrome://extensions/`
@@ -70,19 +69,16 @@ We use automated formatting:
 
 ```bash
 # Format code
-just format
+pnpm format
 
 # Check for linting issues
-just lint
+pnpm lint
 
 # Fix linting issues automatically
-just lint-fix
+pnpm lint:fix
 
 # Type check
-just type-check
-
-# Run all checks
-just check
+pnpm type-check
 ```
 
 All checks **must pass** before submitting a PR.
@@ -242,11 +238,10 @@ just build
 4. Check the browser console (F12 → Console tab) for CrunchyThread debug logs
 
 **Step 4: Enable debug logs (optional)**
-Debug logging is **commented out** in production but easy to enable for development:
+Debug logging is **commented out** by default but easy to enable for development:
 1. Open `src/popup/App.tsx`, `src/content/crunchyroll-detector.ts`, or `src/background/service-worker.ts`
-2. Uncomment the `debugLog()`, `debugWarn()`, and `debugError()` functions
-3. Uncomment the calls to these functions throughout the file
-4. Rebuild: `just build`
+2. Uncomment the `debugLog()`, `debugWarn()`, and `debugError()` function calls throughout the file
+3. Rebuild: `pnpm build`
 
 **Step 5: Check debug logs**
 If the extension isn't working:
@@ -270,13 +265,10 @@ If the extension isn't working:
 
 ### Code Quality Checks
 ```bash
-# All checks (must pass before PR)
-just check
-
 # Individual checks
-just lint          # ESLint
-just format:check  # Prettier
-just type-check    # TypeScript
+pnpm lint          # ESLint
+pnpm format:check  # Prettier
+pnpm type-check    # TypeScript
 ```
 
 ### Testing Across Browsers/Regions

@@ -11,10 +11,6 @@ help:
 install:
     pnpm install
 
-# Development build with HMR
-dev:
-    pnpm dev --host
-
 # Production build
 build: clean install
     pnpm build

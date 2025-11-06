@@ -6,9 +6,7 @@
   "main": "dist/popup.js",
   "scripts": {
     "generate:anime": "node scripts/generate-anime-mappings.js",
-    "dev": "pnpm generate:anime && vite",
     "build": "pnpm generate:anime && vite build",
-    "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
