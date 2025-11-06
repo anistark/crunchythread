@@ -1,0 +1,52 @@
+{
+  "name": "crunchythread",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
+  "main": "dist/popup.js",
+  "scripts": {
+    "generate:anime": "node scripts/generate-anime-mappings.js",
+    "dev": "pnpm generate:anime && vite",
+    "build": "pnpm generate:anime && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "crunchyroll",
+    "reddit",
+    "anime",
+    "discussion",
+    "chrome-extension"
+  ],
+  "author": "anistark",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/chrome": "^0.1.27",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "@vitejs/plugin-react": "^5.1.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "picomatch": "latest",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.1"
+  }
+}

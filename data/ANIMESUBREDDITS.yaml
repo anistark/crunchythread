@@ -1,0 +1,57 @@
+# CrunchyThread Anime to Subreddit Mapping
+# Format:
+#   - title: "Official anime title"
+#     subreddits: ["primary_subreddit", "secondary_subreddit"]
+#     aliases: ["alternate_name_1", "abbreviation"]
+#     season_specific: false  # Set to true if different seasons have separate threads
+
+anime:
+  - title: "One Piece"
+    subreddits: ["OnePiece"]
+    aliases: ["One Piece", "OP"]
+    season_specific: false
+
+  - title: "Jujutsu Kaisen"
+    subreddits: ["JujutsuKaisen"]
+    aliases: ["JJK", "Jujutsu"]
+    season_specific: false
+
+  - title: "Attack on Titan"
+    subreddits: ["attackontitan"]
+    aliases: ["AOT", "Shingeki no Kyojin", "SnK"]
+    season_specific: false
+
+  - title: "My Hero Academia"
+    subreddits: ["MyHeroAcademia", "BokuNoHeroAcademia"]
+    aliases: ["MHA", "BNHA", "My Hero"]
+    season_specific: false
+
+  - title: "Demon Slayer"
+    subreddits: ["KimetsuNoYaiba"]
+    aliases: ["Kimetsu no Yaiba", "KnY"]
+    season_specific: false
+
+  - title: "Chainsaw Man"
+    subreddits: ["ChainsawMan"]
+    aliases: ["CSM"]
+    season_specific: false
+
+  - title: "The Beginning After the End"
+    subreddits: ["tbate"]
+    aliases: ["TBATE"]
+    season_specific: false
+
+  - title: "Spy x Family"
+    subreddits: ["SpyxFamily"]
+    aliases: ["SpyFamily", "Spy Family"]
+    season_specific: false
+
+  - title: "Tower of God"
+    subreddits: ["TowerOfGod"]
+    aliases: ["ToG"]
+    season_specific: false
+
+  - title: "Solo Leveling"
+    subreddits: ["SoloLeveling"]
+    aliases: ["Sung Jinwoo"]
+    season_specific: false
