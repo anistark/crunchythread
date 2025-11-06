@@ -241,17 +241,25 @@ just build
    - Display "Discussion Threads:" with Reddit results if search works
 4. Check the browser console (F12 → Console tab) for CrunchyThread debug logs
 
-**Step 4: Check debug logs**
+**Step 4: Enable debug logs (optional)**
+Debug logging is **commented out** in production but easy to enable for development:
+1. Open `src/popup/App.tsx`, `src/content/crunchyroll-detector.ts`, or `src/background/service-worker.ts`
+2. Uncomment the `debugLog()`, `debugWarn()`, and `debugError()` functions
+3. Uncomment the calls to these functions throughout the file
+4. Rebuild: `just build`
+
+**Step 5: Check debug logs**
 If the extension isn't working:
 1. Open Chrome DevTools (F12)
 2. Go to Console tab
-3. Look for logs starting with "CrunchyThread:"
+3. Look for logs starting with `[🧵 CrunchyThread]`
 4. These will show:
    - Whether content script loaded
    - What anime data was detected
    - Whether message communication succeeded
+   - Reddit search results and scoring
 
-**Step 5: Test Reddit search**
+**Step 6: Test Reddit search**
 1. Check background service worker logs:
    - Go to `chrome://extensions/`
    - Find CrunchyThread

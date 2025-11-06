@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CrunchyThread</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #0f0f0f;
+      }
+      #root {
+        width: 500px;
+        min-height: 600px;
+        overflow: hidden;
+      }
+    </style>
     <script type="module" src="../popup.js"></script>
   </head>
-  <body class="bg-ct-dark">
-    <div id="root" class="w-96 min-h-screen bg-ct-dark"></div>
+  <body>
+    <div id="root"></div>
   </body>
 </html>

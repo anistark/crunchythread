@@ -1,4 +1,8 @@
-# 🌸 CrunchyThread
+# CrunchyThread
+
+<div align="center">
+  <img src="./public/logo.png" alt="CrunchyThread Logo" width="200" />
+</div>
 
 > Watch | React | Discuss
 
@@ -60,22 +64,28 @@ It's your one-click bridge from *watching* to *talking*.
 3. Click the **CrunchyThread** icon to see the discussion thread
 
 ### Using CrunchyThread
-- Navigate to any Crunchyroll anime episode page
-- The extension automatically detects the anime and searches Reddit
-- Click the extension icon to view discussion threads
-- Click "Open on Reddit" to join the conversation
+1. Navigate to any Crunchyroll anime episode page
+2. The extension **automatically detects** the anime and episode number
+3. Click the **CrunchyThread icon** in your browser toolbar
+4. See the best matching Reddit discussion thread instantly
+5. Click the card to **open the thread on Reddit** in a new tab
+6. Join the community discussion!
 
-**That's it!** No login required. The extension searches Reddit anonymously.
+**That's it!** No login required. The extension searches Reddit anonymously with smart scoring to find the most relevant thread.
 
 ---
 
 ## 🎨 Features
 
-- ✅ **One-Click Discussion Access** — Find Reddit threads instantly
-- ✅ **Dark Theme** — Matches Crunchyroll & Reddit aesthetics
-- ✅ **Thread Stats** — See upvotes, comments, and post time
-- ✅ **Anime Detection** — Automatically identifies anime & episode
-- ✅ **Simple & Fast** — No bloat, minimal UI
+- ✅ **Instant Thread Discovery** — Automatically finds the matching Reddit discussion thread
+- ✅ **Beautiful Glassmorphic Design** — Frosted glass UI with dark theme matching Crunchyroll aesthetics
+- ✅ **Smart Thread Matching** — AI-powered scoring prioritizes exact episode matches
+- ✅ **Live Status Indicator** — Pulsing green dot shows you're actively watching
+- ✅ **Prominent Stats** — Large emoji + numbers show upvotes and comment counts
+- ✅ **Anime Detection** — Automatically identifies anime title and episode number
+- ✅ **No Login Required** — Anonymous Reddit search, completely privacy-friendly
+- ✅ **Fast & Lightweight** — Minimal bundle size, instant popup load
+- ✅ **Smooth Animations** — Hover effects and transitions for delightful UX
 
 ---
 
