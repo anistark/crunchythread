@@ -1,12 +1,14 @@
 {
   "name": "crunchythread",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
   "main": "dist/popup.js",
   "scripts": {
     "generate:anime": "node scripts/generate-anime-mappings.js",
-    "build": "pnpm generate:anime && vite build",
+    "sync:version": "node scripts/sync-version.js",
+    "build": "pnpm sync:version && pnpm generate:anime && vite build",
+    "postversion": "pnpm sync:version",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
