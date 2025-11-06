@@ -8,12 +8,10 @@ Thank you for your interest in contributing! We welcome all kinds of contributio
 - 📝 Adding missing anime to the database
 - 🎨 UI/UX improvements
 
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js** 18+ (recommend 20+)
+- **Node.js** 22+
 - **pnpm** 10+ (`npm install -g pnpm`)
 - **Git**
 - A code editor (VSCode recommended)
@@ -21,28 +19,28 @@ Thank you for your interest in contributing! We welcome all kinds of contributio
 ### Setup Development Environment
 
 1. **Fork the repository**
-   ```bash
+   ```sh
    # On GitHub, click "Fork" button
    ```
 
 2. **Clone your fork**
-   ```bash
+   ```sh
    git clone https://github.com/YOUR_USERNAME/crunchythread.git
    cd crunchythread
    ```
 
 3. **Add upstream remote** (to keep in sync)
-   ```bash
+   ```sh
    git remote add upstream https://github.com/anistark/crunchythread.git
    ```
 
 4. **Install dependencies**
-   ```bash
+   ```sh
    pnpm install
    ```
 
 5. **Build the extension**
-   ```bash
+   ```sh
    just build
    ```
 
@@ -52,14 +50,13 @@ Thank you for your interest in contributing! We welcome all kinds of contributio
    - Click "Load unpacked"
    - Select the `dist/` folder
 
----
 
 ## 📝 Making Changes
 
 ### Branch Naming
 Use descriptive branch names:
-```bash
-git checkout -b feature/anime-search-improvement
+```sh
+git checkout -b feat/anime-search-improvement
 git checkout -b fix/oauth-token-expiry
 git checkout -b docs/update-readme
 ```
@@ -67,7 +64,7 @@ git checkout -b docs/update-readme
 ### Code Style
 We use automated formatting:
 
-```bash
+```sh
 # Format code
 pnpm format
 
@@ -104,14 +101,14 @@ Prefixes:
 ### Pull Request Process
 
 1. **Keep your branch updated**
-   ```bash
+   ```sh
    git fetch upstream
    git rebase upstream/main
    ```
 
 2. **Push to your fork**
-   ```bash
-   git push origin feature/your-feature-name
+   ```sh
+   git push origin feat/your-feature-name
    ```
 
 3. **Open a Pull Request**
@@ -125,7 +122,6 @@ Prefixes:
    - Address feedback and update your PR
    - All CI checks must pass
 
----
 
 ## 🎯 Common Contribution Types
 
@@ -147,7 +143,7 @@ The easiest way to contribute! Help us grow the anime database.
    ```
 
 3. **Rebuild the extension**
-   ```bash
+   ```sh
    just build
    ```
    This auto-generates the TypeScript from your YAML changes.
@@ -166,7 +162,7 @@ The easiest way to contribute! Help us grow the anime database.
    - Search [GitHub Issues](https://github.com/anistark/crunchythread/issues)
 
 2. **Create a detailed bug report**
-   ```markdown
+   ```md
    ## Description
    Brief description of the bug
 
@@ -211,14 +207,13 @@ The easiest way to contribute! Help us grow the anime database.
    - Refine the feature together
    - Open PR when ready
 
----
 
 ## 🧪 Testing Your Changes
 
 ### Manual Testing
 
 **Step 1: Build the extension**
-```bash
+```sh
 just build
 ```
 
@@ -264,7 +259,7 @@ If the extension isn't working:
 **Note:** Hard refresh Chrome after making code changes to ensure new build is loaded.
 
 ### Code Quality Checks
-```bash
+```sh
 # Individual checks
 pnpm lint          # ESLint
 pnpm format:check  # Prettier
@@ -275,13 +270,8 @@ pnpm type-check    # TypeScript
 - Test on Crunchyroll US, EU (if available)
 - Test with different anime
 - Test on different episode pages
-- Test login/logout flow
-
----
 
 ## 📚 Project Structure
-
-See [DEV.md](./DEV.md) for detailed project structure, architecture, and technical decisions.
 
 Quick reference:
 - `src/popup/` — User-facing React UI
@@ -290,70 +280,12 @@ Quick reference:
 - `data/ANIMESUBREDDITS.yaml` — Anime-to-subreddit mapping (source of truth)
 - `scripts/generate-anime-mappings.js` — Build script (auto-generates TypeScript)
 
----
-
-## 🔍 Code Review Guidelines
-
-When reviewing code, we look for:
-
-✅ **Do**
-- Follow project coding style
-- Add TypeScript types
-- Handle error cases gracefully
-- Keep components small and focused
-- Write comments for complex logic
-- Test your changes thoroughly
-
-❌ **Don't**
-- Mix features in one PR (keep focused)
-- Add console.logs (use error handling)
-- Ignore TypeScript errors
-- Break existing functionality
-- Commit sensitive data (API keys, tokens)
-
----
-
-## 📖 Documentation
-
-### Code Documentation
-- Use TypeScript types for self-documentation
-- Add JSDoc comments for public functions:
-  ```typescript
-  /**
-   * Searches Reddit for anime discussion threads
-   * @param query - The search query (e.g., "Jujutsu Kaisen Episode 5")
-   * @returns Promise<RedditThread[]> - Matching threads
-   */
-  async function searchThreads(query: string): Promise<RedditThread[]> {
-    // implementation
-  }
-  ```
-
-### Documentation Files
-- **README.md** — User-facing: installation, features, FAQ, support
-- **CONTRIBUTING.md** — This file: developer setup, workflow, how to contribute
-- **DEV.md** — Internal docs: tech stack, architecture, roadmap, project decisions
-
----
-
-## 🚀 Deployment
-
-Maintainers handle Chrome Web Store deployment. Once your PR is merged:
-
-1. Changes are bundled in next release
-2. Version is bumped
-3. Release notes are generated
-4. Extension is published to Chrome Web Store
-
----
-
 ## 💬 Getting Help
 
 - 📖 **Questions about the project?** → [GitHub Discussions](https://github.com/anistark/crunchythread/discussions)
 - 🐛 **Found a bug?** → [GitHub Issues](https://github.com/anistark/crunchythread/issues)
 - 💡 **Have an idea?** → [Feature Requests](https://github.com/anistark/crunchythread/discussions/categories/feature-requests)
 
----
 
 ## 📋 Contribution Checklist
 
@@ -369,12 +301,9 @@ Before submitting a PR, make sure:
 - [ ] No breaking changes (or clearly documented)
 - [ ] Documentation is updated if needed
 
----
 
 ## 🎉 You Made It!
 
 Thank you for contributing to CrunchyThread! Your help makes the extension better for everyone.
 
----
-
-Made with ❤️ by the CrunchyThread community
+Made with 💚 by the CrunchyThread community
