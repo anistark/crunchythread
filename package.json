@@ -1,6 +1,6 @@
 {
   "name": "crunchythread",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
   "main": "dist/popup.js",
