@@ -1,15 +1,11 @@
 {
   "manifest_version": 3,
   "name": "CrunchyThread",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
-  "permissions": [
-    "storage"
-  ],
   "host_permissions": [
     "https://www.crunchyroll.com/*",
-    "https://www.reddit.com/*",
-    "https://oauth.reddit.com/*"
+    "https://www.reddit.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
