@@ -30,8 +30,8 @@ It's your one-click bridge from *watching* to *talking*.
 
 ## 📥 Installation
 
-### From Chrome Web Store (Coming Soon)
-1. Visit Chrome Web Store page (link coming soon)
+### From Chrome Web Store
+1. Visit [CrunchyThread on Chrome Web Store](https://chromewebstore.google.com/detail/crunchythread/faghgokfpnffhpknonlghbogjkaafnil)
 2. Click "Add to Chrome"
 3. Confirm permissions
 
