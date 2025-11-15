@@ -10,6 +10,8 @@
 
 [![Follow on X](https://img.shields.io/badge/Follow%20on%20X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://x.com/crunchythread)
 
+![Anime Tracked](https://img.shields.io/badge/Anime%20Tracked-21-FB542B?style=for-the-badge)
+
 Supports:
 
 ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) ![Arc](https://img.shields.io/badge/Arc-000000?style=for-the-badge&logo=arc&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white) ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white) ![Vivaldi](https://img.shields.io/badge/Vivaldi-EF3939?style=for-the-badge&logo=Vivaldi&logoColor=white)

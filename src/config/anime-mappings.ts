@@ -120,6 +120,119 @@ export const ANIME_MAPPINGS: AnimeMapping[] = [
       "Sung Jinwoo"
     ],
     "season_specific": false
+  },
+  {
+    "title": "One-Punch Man",
+    "subreddits": [
+      "OnePunchMan"
+    ],
+    "aliases": [
+      "OPM"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Case Closed",
+    "subreddits": [
+      "CaseClosedFM"
+    ],
+    "aliases": [
+      "Detective Conan"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "To Your Eternity",
+    "subreddits": [
+      "ToYourEternity"
+    ],
+    "aliases": [
+      "Fumetsu no Anata e"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Ranma 1/2",
+    "subreddits": [
+      "Ranma"
+    ],
+    "aliases": [
+      "Ranma1/2"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Shin Chan",
+    "subreddits": [
+      "Shinchisme"
+    ],
+    "aliases": [
+      "Shinnosuke",
+      "Crayon Shin-chan"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Disney Twisted-Wonderland",
+    "subreddits": [
+      "TwistedWonderland"
+    ],
+    "aliases": [
+      "Twisted-Wonderland",
+      "TWST"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Umamusume",
+    "subreddits": [
+      "umamusume"
+    ],
+    "aliases": [
+      "Uma Musume"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "GINTAMA",
+    "subreddits": [
+      "Gintama"
+    ],
+    "aliases": [
+      "Gintama"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Isekai Quartet",
+    "subreddits": [
+      "IsekaiQuartet"
+    ],
+    "aliases": [
+      "Isekai Quartet"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Pokémon",
+    "subreddits": [
+      "pokemon"
+    ],
+    "aliases": [
+      "Pokemon",
+      "Pokémon Horizons"
+    ],
+    "season_specific": false
+  },
+  {
+    "title": "Digimon",
+    "subreddits": [
+      "digimon"
+    ],
+    "aliases": [
+      "Digimon"
+    ],
+    "season_specific": false
   }
 ];
 
