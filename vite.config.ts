@@ -42,7 +42,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: path.resolve(__dirname, 'src/popup/main.tsx'),
-        content: path.resolve(__dirname, 'src/content/crunchyroll-detector.ts'),
+        content: path.resolve(__dirname, 'src/content/content.ts'),
         background: path.resolve(__dirname, 'src/background/service-worker.ts'),
       },
       output: [

@@ -16,9 +16,9 @@ Supports:
 
 ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) ![Arc](https://img.shields.io/badge/Arc-000000?style=for-the-badge&logo=arc&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white) ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white) ![Vivaldi](https://img.shields.io/badge/Vivaldi-EF3939?style=for-the-badge&logo=Vivaldi&logoColor=white)
 
-**CrunchyThread** is a Chrome extension that connects any **Crunchyroll anime episode** directly to its respective **Reddit discussion thread** — instantly.
+**CrunchyThread** is a Chrome extension that connects anime episodes directly to their respective **Reddit discussion threads** — instantly.
 
-When you open an anime or episode page on [Crunchyroll](https://www.crunchyroll.com), CrunchyThread automatically detects the title and episode number, then finds the **matching Reddit discussion thread** (in the anime's subreddit). Shows the thread title, subreddit, and comment stats (upvotes/comments/time) and the card that can take you to the reddit thread.
+Currently supports **Crunchyroll**, with modular detectors for other streaming platforms coming soon. When you watch an anime episode, CrunchyThread automatically detects the title and episode number, then finds the **matching Reddit discussion thread** (in the anime's subreddit). Shows the thread title, subreddit, and comment stats (upvotes/comments/time) and links directly to the Reddit thread.
 
 As anime fans, we love the shared experience — the memes, theories, and emotional breakdowns — that follow every episode drop.
 
@@ -44,6 +44,33 @@ It's your one-click bridge from *watching* to *talking*.
 4. Enable "Developer mode" (top right)
 5. Click "Load unpacked"
 6. Select the extracted folder
+
+## 🔌 Extensible Detector Architecture
+
+CrunchyThread uses a modular detector system that makes it easy to add support for new streaming platforms:
+
+### Current Support
+- ✅ **Crunchyroll** - Fully supported with multi-layer detection
+- ✅ **Generic Fallback** - Works on any website using common meta tags and patterns
+
+### Planned Support (TODO)
+- 🔜 **Netflix** - Coming soon
+- 🔜 **Hulu** - Coming soon
+- 🔜 **Prime Video** - Coming soon
+- 🔜 **Disney Hotstar** - Coming soon
+
+### Architecture
+Each streaming service has a dedicated detector under `src/content/detectors/services/`. The system automatically selects the right detector based on the current domain, falling back to a generic detector for unsupported platforms.
+
+### Adding a New Detector
+To add support for a new streaming service:
+
+1. Create a new detector file: `src/content/detectors/services/[service-name].ts`
+2. Extend the `BaseDetector` class from `src/content/detectors/base.ts`
+3. Implement the `detect()` method to extract anime title and episode number
+4. Register the detector in `src/content/detectors/index.ts`
+
+See the **Crunchyroll detector** for a complete example.
 
 ## 🤝 Contributing
 
