@@ -55,3 +55,16 @@ deploy: build
 # Watch and rebuild on changes (without HMR)
 watch:
     pnpm vite build --watch
+
+# Create a new release tag from package.json version
+release:
+    #!/bin/bash
+    VERSION=$(jq -r '.version' package.json)
+    TAG="v$VERSION"
+    if git rev-parse "$TAG" >/dev/null 2>&1; then
+        echo "❌ Tag $TAG already exists"
+        exit 1
+    fi
+    git tag -a "$TAG" -m "Release $TAG"
+    echo "✓ Created tag: $TAG"
+    echo "Push with: git push origin $TAG"
