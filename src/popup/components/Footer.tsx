@@ -1,7 +1,14 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { COLORS } from '../styles';
 
 export function Footer() {
+  const [version, setVersion] = useState<string>('');
+
+  useEffect(() => {
+    const manifest = chrome.runtime.getManifest();
+    setVersion(manifest.version);
+  }, []);
+
   const handleLinkHover = (e: MouseEvent<HTMLAnchorElement>) => {
     e.currentTarget.style.color = COLORS.orange;
     e.currentTarget.style.transform = 'scale(1.1)';
@@ -28,6 +35,18 @@ export function Footer() {
         zIndex: 10,
       }}
     >
+      <p
+        style={{
+          fontSize: '12px',
+          color: COLORS.textSecondary,
+          margin: 0,
+          fontWeight: '500',
+          letterSpacing: '0.3px',
+        }}
+      >
+        v{version}
+      </p>
+
       <p
         style={{
           fontSize: '12px',

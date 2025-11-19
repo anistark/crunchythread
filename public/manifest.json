@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "CrunchyThread",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
   "host_permissions": [
     "https://www.crunchyroll.com/*",
