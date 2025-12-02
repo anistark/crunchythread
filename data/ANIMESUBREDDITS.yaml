@@ -110,3 +110,43 @@ anime:
     subreddits: ["digimon"]
     aliases: ["Digimon"]
     season_specific: false
+
+  - title: "Naruto"
+    subreddits: ["Naruto"]
+    aliases: ["Naruto Shippuden", "Boruto"]
+    season_specific: false
+
+  - title: "Bleach"
+    subreddits: ["bleach"]
+    aliases: ["Bleach: Thousand-Year Blood War", "TYBW"]
+    season_specific: false
+
+  - title: "Dragon Ball"
+    subreddits: ["dbz"]
+    aliases: ["Dragon Ball Z", "DBZ", "Dragon Ball Super", "DBS"]
+    season_specific: false
+
+  - title: "Hunter x Hunter"
+    subreddits: ["HunterXHunter"]
+    aliases: ["HxH", "Hunter × Hunter"]
+    season_specific: false
+
+  - title: "Black Clover"
+    subreddits: ["BlackClover"]
+    aliases: ["Black Clover"]
+    season_specific: false
+
+  - title: "Fairy Tail"
+    subreddits: ["fairytail"]
+    aliases: ["Fairy Tail"]
+    season_specific: false
+
+  - title: "Sailor Moon"
+    subreddits: ["sailormoon"]
+    aliases: ["Sailor Moon", "Pretty Guardian Sailor Moon"]
+    season_specific: false
+
+  - title: "Gundam"
+    subreddits: ["Gundam"]
+    aliases: ["Mobile Suit Gundam", "Gundam"]
+    season_specific: false

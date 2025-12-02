@@ -10,7 +10,7 @@
 
 [![Follow on X](https://img.shields.io/badge/Follow%20on%20X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://x.com/crunchythread)
 
-![Anime Tracked](https://img.shields.io/badge/Anime%20Tracked-21-FB542B?style=for-the-badge)
+![Anime Tracked](https://img.shields.io/badge/Anime%20Tracked-29-FB542B?style=for-the-badge)
 
 Supports:
 
