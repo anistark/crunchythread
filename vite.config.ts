@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { copyFileSync, mkdirSync, readdirSync, statSync } from 'fs';
 
+const TARGET_BROWSER = process.env.TARGET_BROWSER || 'chrome';
+
 export default defineConfig({
   plugins: [
     react(),
@@ -13,7 +15,8 @@ export default defineConfig({
         mkdirSync('./dist', { recursive: true });
         mkdirSync('./dist/icons', { recursive: true });
         mkdirSync('./dist/config', { recursive: true });
-        copyFileSync('./public/manifest.json', './dist/manifest.json');
+        const manifestFile = `./public/manifest-${TARGET_BROWSER}.json`;
+        copyFileSync(manifestFile, './dist/manifest.json');
         copyFileSync('./public/popup.html', './dist/popup.html');
 
         // Copy all icon files

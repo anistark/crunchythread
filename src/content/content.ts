@@ -1,5 +1,5 @@
+import { browserAPI } from '../utils/browser-api';
 import { detectorRegistry } from './detectors';
-import type { AnimeData } from './detectors/base';
 
 /**
  * Main content script for anime detection
@@ -11,7 +11,7 @@ function detectAnimeEpisodePage(): void {
   const animeData = detector.detect();
 
   if (animeData) {
-    chrome.runtime
+    browserAPI.runtime
       .sendMessage({
         action: 'ANIME_DATA',
         payload: animeData,
@@ -23,15 +23,21 @@ function detectAnimeEpisodePage(): void {
 }
 
 // Listen for explicit requests from popup or background
-chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
-  const req = request as { action?: string };
+browserAPI.runtime.onMessage.addListener(
+  (
+    request: unknown,
+    _sender: chrome.runtime.MessageSender,
+    sendResponse: (response?: unknown) => void,
+  ) => {
+    const req = request as { action?: string };
 
-  if (req.action === 'GET_ANIME_DATA') {
-    const detector = detectorRegistry.getDetector();
-    const animeData = detector.detect();
-    sendResponse({ payload: animeData });
-  }
-});
+    if (req.action === 'GET_ANIME_DATA') {
+      const detector = detectorRegistry.getDetector();
+      const animeData = detector.detect();
+      sendResponse({ payload: animeData });
+    }
+  },
+);
 
 // Detect on page load
 if (document.readyState === 'loading') {

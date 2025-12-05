@@ -1,13 +1,15 @@
 {
   "name": "crunchythread",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
   "main": "dist/popup.js",
   "scripts": {
     "generate:anime": "node scripts/generate-anime-mappings.js",
     "sync:version": "node scripts/sync-version.js",
-    "build": "pnpm sync:version && pnpm generate:anime && vite build",
+    "build:chrome": "pnpm sync:version && pnpm generate:anime && TARGET_BROWSER=chrome vite build",
+    "build:firefox": "pnpm sync:version && pnpm generate:anime && TARGET_BROWSER=firefox vite build",
+    "build": "pnpm build:chrome && pnpm build:firefox",
     "postversion": "pnpm sync:version",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",

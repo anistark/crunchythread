@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { browserAPI } from '../utils/browser-api';
 import { Header } from './components/Header';
 import { AnimeInfoCard } from './components/AnimeInfoCard';
 import { LoadingState } from './components/LoadingState';
@@ -30,11 +31,12 @@ export default function App() {
 
     const query = episode ? `${title}: Episode ${episode}` : title;
 
-    chrome.runtime.sendMessage(
+    browserAPI.runtime.sendMessage(
       { action: 'SEARCH_THREADS', payload: { title, query, episode } },
-      (response) => {
-        if (response && response.threads) {
-          setThreads(response.threads);
+      (response: unknown) => {
+        const resp = response as { threads?: Thread[] } | undefined;
+        if (resp && resp.threads) {
+          setThreads(resp.threads);
         }
 
         setLoading(false);
@@ -56,11 +58,11 @@ export default function App() {
       }
     };
 
-    chrome.runtime.onMessage.addListener(messageListener);
+    browserAPI.runtime.onMessage.addListener(messageListener);
 
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    browserAPI.tabs.query({ active: true, currentWindow: true }, (tabs: chrome.tabs.Tab[]) => {
       if (tabs[0] && tabs[0].id) {
-        chrome.tabs
+        browserAPI.tabs
           .sendMessage(tabs[0].id, { action: 'GET_ANIME_DATA' })
           .then((response: unknown) => {
             const resp = response as Record<string, unknown>;
@@ -81,7 +83,7 @@ export default function App() {
     });
 
     return () => {
-      chrome.runtime.onMessage.removeListener(messageListener);
+      browserAPI.runtime.onMessage.removeListener(messageListener);
     };
   }, [searchThreads]);
 

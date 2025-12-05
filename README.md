@@ -14,9 +14,9 @@
 
 Supports:
 
-![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) ![Arc](https://img.shields.io/badge/Arc-000000?style=for-the-badge&logo=arc&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white) ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white) ![Vivaldi](https://img.shields.io/badge/Vivaldi-EF3939?style=for-the-badge&logo=Vivaldi&logoColor=white)
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox&logoColor=white) ![Arc](https://img.shields.io/badge/Arc-000000?style=for-the-badge&logo=arc&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=Brave&logoColor=white) ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white) ![Vivaldi](https://img.shields.io/badge/Vivaldi-EF3939?style=for-the-badge&logo=Vivaldi&logoColor=white)
 
-**CrunchyThread** is a Chrome extension that connects anime episodes directly to their respective **Reddit discussion threads** — instantly.
+**CrunchyThread** is a browser extension that connects anime episodes directly to their respective **Reddit discussion threads** — instantly. Works on Chrome, Firefox, and all Chromium-based browsers.
 
 Currently supports **Crunchyroll**, with modular detectors for other streaming platforms coming soon. When you watch an anime episode, CrunchyThread automatically detects the title and episode number, then finds the **matching Reddit discussion thread** (in the anime's subreddit). Shows the thread title, subreddit, and comment stats (upvotes/comments/time) and links directly to the Reddit thread.
 
@@ -37,13 +37,27 @@ It's your one-click bridge from *watching* to *talking*.
 2. Click "Add to Chrome"
 3. Confirm permissions
 
+### From Firefox Add-ons
+1. Visit [CrunchyThread on Firefox Add-ons](https://addons.mozilla.org) (coming soon)
+2. Click "Add to Firefox"
+3. Confirm permissions
+
 ### Manual Installation (Developer Version)
-1. Download the latest release from [GitHub releases](https://github.com/anistark/crunchythread/releases)
+
+#### For Chrome/Chromium Browsers
+1. Download the latest `crunchythread-chrome.zip` from [GitHub releases](https://github.com/anistark/crunchythread/releases)
 2. Extract the `.zip` file
 3. Go to `chrome://extensions/`
 4. Enable "Developer mode" (top right)
 5. Click "Load unpacked"
 6. Select the extracted folder
+
+#### For Firefox
+1. Download the latest `crunchythread-firefox.zip` from [GitHub releases](https://github.com/anistark/crunchythread/releases)
+2. Extract the `.zip` file
+3. Go to `about:debugging#/runtime/this-firefox`
+4. Click "Load Temporary Add-on"
+5. Select the `manifest.json` from the extracted folder
 
 ## 🔌 Extensible Detector Architecture
 
@@ -121,7 +135,7 @@ A: No, CrunchyThread is an unofficial fan project. It's not affiliated with Crun
 A: No. The extension only searches public Reddit data using the official Reddit API. We don't collect or store any user information.
 
 **Q: Can I use this on Firefox?**
-A: Not yet, but Firefox support is planned for a future release.
+A: Yes! CrunchyThread is available on Firefox. You can install it from [Firefox Add-ons](https://addons.mozilla.org) (coming soon) or manually load it in developer mode.
 
 **Q: How can I add my favorite anime to the database?**
 A: Great question! Check [CONTRIBUTING.md](./CONTRIBUTING.md) for the easy steps.

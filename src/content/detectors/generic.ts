@@ -88,7 +88,9 @@ export class GenericDetector extends BaseDetector {
     // Check visible page content (h1, h2, etc.)
     const headings = document.querySelectorAll('h1, h2, h3');
     for (const heading of headings) {
-      const headingMatch = heading.textContent?.match(/[Ee]pisode\s*(\d+)|[Ee]p\.?\s*(\d+)|[Ee](\d+)/);
+      const headingMatch = heading.textContent?.match(
+        /[Ee]pisode\s*(\d+)|[Ee]p\.?\s*(\d+)|[Ee](\d+)/,
+      );
       if (headingMatch) {
         return parseInt(headingMatch[1] || headingMatch[2] || headingMatch[3]);
       }

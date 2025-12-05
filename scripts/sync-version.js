@@ -14,25 +14,27 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function main() {
   const packageJsonPath = path.join(__dirname, '../package.json');
-  const manifestPath = path.join(__dirname, '../public/manifest.json');
+  const manifestPaths = [
+    path.join(__dirname, '../public/manifest-chrome.json'),
+    path.join(__dirname, '../public/manifest-firefox.json'),
+  ];
 
   try {
     // Read package.json
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
     const version = packageJson.version;
 
-    // Read manifest.json
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-
-    // Update version
-    manifest.version = version;
-
-    // Write back
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+    // Update both manifest files
+    for (const manifestPath of manifestPaths) {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+      manifest.version = version;
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+    }
 
     console.log(`✅ Version synced: ${version}`);
     console.log(`   • Source: package.json`);
-    console.log(`   • Updated: public/manifest.json`);
+    console.log(`   • Updated: public/manifest-chrome.json`);
+    console.log(`   • Updated: public/manifest-firefox.json`);
   } catch (error) {
     console.error('❌ Error syncing version:', error.message);
     process.exit(1);
