@@ -1,13 +1,10 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { MouseEvent } from 'react';
+import { browserAPI } from '../../utils/browser-api';
 import { COLORS } from '../styles';
 
 export function Footer() {
-  const [version, setVersion] = useState<string>('');
-
-  useEffect(() => {
-    const manifest = chrome.runtime.getManifest();
-    setVersion(manifest.version);
-  }, []);
+  const manifest = browserAPI.runtime.getManifest();
+  const version = manifest.version;
 
   const handleLinkHover = (e: MouseEvent<HTMLAnchorElement>) => {
     e.currentTarget.style.color = COLORS.orange;

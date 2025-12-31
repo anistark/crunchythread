@@ -1,3 +1,4 @@
+import { browserAPI } from '../utils/browser-api';
 import { getSubredditsForAnime } from '../config/anime-mappings';
 
 interface MessageRequest {
@@ -15,23 +16,29 @@ interface RedditThread {
   created_utc: number;
 }
 
-chrome.runtime.onMessage.addListener((request: MessageRequest, _sender, sendResponse) => {
-  if (request.action === 'SEARCH_THREADS') {
-    const payload = request.payload as Record<string, string>;
+browserAPI.runtime.onMessage.addListener(
+  (
+    request: MessageRequest,
+    _sender: chrome.runtime.MessageSender,
+    sendResponse: (response?: unknown) => void,
+  ) => {
+    if (request.action === 'SEARCH_THREADS') {
+      const payload = request.payload as Record<string, string>;
 
-    handleThreadSearch(payload)
-      .then((result) => {
-        sendResponse(result);
-      })
-      .catch((error) => {
-        sendResponse({
-          threads: [],
-          error: error instanceof Error ? error.message : String(error),
+      handleThreadSearch(payload)
+        .then((result) => {
+          sendResponse(result);
+        })
+        .catch((error) => {
+          sendResponse({
+            threads: [],
+            error: error instanceof Error ? error.message : String(error),
+          });
         });
-      });
-    return true;
-  }
-});
+      return true;
+    }
+  },
+);
 
 async function handleThreadSearch(
   payload: Record<string, unknown>,
@@ -143,6 +150,6 @@ async function searchRedditSubreddit(subreddit: string, query: string): Promise<
   return threads;
 }
 
-chrome.tabs.onUpdated.addListener((_tabId, _changeInfo, _tab) => {
+browserAPI.tabs.onUpdated.addListener((_tabId: unknown, _changeInfo: unknown, _tab: unknown) => {
   // Placeholder for future tab tracking logic
-});
+}) as unknown as void;

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "CrunchyThread",
+  "version": "0.3.0",
+  "description": "Watch anime on Crunchyroll, instantly connect to Reddit discussions",
+  "host_permissions": [
+    "https://www.crunchyroll.com/*",
+    "https://www.reddit.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CrunchyThread"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.crunchyroll.com/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "crunchythread@mozilla.org",
+      "strict_min_version": "109.0"
+    }
+  }
+}
