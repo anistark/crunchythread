@@ -40,14 +40,18 @@ browserAPI.runtime.onMessage.addListener(
   },
 );
 
+type EmptyReason = 'unmapped' | 'no-results';
+
+const MAX_RESULTS = 3;
+
 async function handleThreadSearch(
   payload: Record<string, unknown>,
-): Promise<{ threads: RedditThread[] }> {
+): Promise<{ threads: RedditThread[]; reason?: EmptyReason }> {
   const title = payload.title as string | undefined;
   const query = payload.query as string | undefined;
 
   if (!query) {
-    return { threads: [] };
+    return { threads: [], reason: 'unmapped' };
   }
 
   try {
@@ -57,7 +61,7 @@ async function handleThreadSearch(
     }
 
     if (subreddits.length === 0) {
-      return { threads: [] };
+      return { threads: [], reason: 'unmapped' };
     }
 
     const allThreads: RedditThread[] = [];
@@ -71,10 +75,17 @@ async function handleThreadSearch(
       }
     }
 
+    const seen = new Set<string>();
+    const deduped = allThreads.filter((t) => {
+      if (seen.has(t.id)) return false;
+      seen.add(t.id);
+      return true;
+    });
+
     const episodeMatch = query.match(/[Ee]pisode\s+(\d+)/);
     const targetEpisode = episodeMatch ? episodeMatch[1] : null;
 
-    const scoredThreads = allThreads.map((thread) => {
+    const scoredThreads = deduped.map((thread) => {
       let score = thread.upvotes;
 
       if (targetEpisode && thread.title.includes(`${targetEpisode}`)) {
@@ -90,12 +101,16 @@ async function handleThreadSearch(
 
     const sortedThreads = scoredThreads
       .sort((a, b) => b.score - a.score)
-      .slice(0, 1)
+      .slice(0, MAX_RESULTS)
       .map(({ thread }) => thread);
+
+    if (sortedThreads.length === 0) {
+      return { threads: [], reason: 'no-results' };
+    }
 
     return { threads: sortedThreads };
   } catch {
-    return { threads: [] };
+    return { threads: [], reason: 'no-results' };
   }
 }
 

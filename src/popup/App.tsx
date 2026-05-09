@@ -19,11 +19,15 @@ interface Thread {
   upvotes?: number;
   comments?: number;
   url?: string;
+  subreddit?: string;
 }
+
+type EmptyReason = 'unmapped' | 'no-results';
 
 export default function App() {
   const [animeData, setAnimeData] = useState<AnimeData | null>(null);
   const [threads, setThreads] = useState<Thread[]>([]);
+  const [emptyReason, setEmptyReason] = useState<EmptyReason>('no-results');
   const [loading, setLoading] = useState(false);
 
   const searchThreads = useCallback((title: string, episode?: number) => {
@@ -34,11 +38,9 @@ export default function App() {
     browserAPI.runtime.sendMessage(
       { action: 'SEARCH_THREADS', payload: { title, query, episode } },
       (response: unknown) => {
-        const resp = response as { threads?: Thread[] } | undefined;
-        if (resp && resp.threads) {
-          setThreads(resp.threads);
-        }
-
+        const resp = response as { threads?: Thread[]; reason?: EmptyReason } | undefined;
+        setThreads(resp?.threads ?? []);
+        setEmptyReason(resp?.reason ?? 'no-results');
         setLoading(false);
       },
     );
@@ -124,7 +126,11 @@ export default function App() {
             ) : threads.length > 0 ? (
               <ThreadList threads={threads} />
             ) : (
-              <NoThreadFound />
+              <NoThreadFound
+                reason={emptyReason}
+                title={animeData.title}
+                episode={animeData.episode}
+              />
             )}
           </>
         ) : (

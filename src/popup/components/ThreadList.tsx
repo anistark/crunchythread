@@ -7,6 +7,7 @@ interface Thread {
   upvotes?: number;
   comments?: number;
   url?: string;
+  subreddit?: string;
 }
 
 interface ThreadListProps {
@@ -14,9 +15,10 @@ interface ThreadListProps {
 }
 
 export function ThreadList({ threads }: ThreadListProps) {
+  const label = threads.length > 1 ? `Top ${threads.length} discussions` : 'Discussion';
+
   return (
     <div>
-      {/* Section Header */}
       <div
         style={{
           display: 'flex',
@@ -35,7 +37,7 @@ export function ThreadList({ threads }: ThreadListProps) {
             margin: 0,
           }}
         >
-          Discussion
+          {label}
         </p>
         <div
           style={{
@@ -47,14 +49,15 @@ export function ThreadList({ threads }: ThreadListProps) {
         />
       </div>
 
-      {/* Thread Cards */}
       {threads.map((thread, idx) => (
         <ThreadCard
-          key={idx}
+          key={thread.id || idx}
           title={thread.title || 'Discussion Thread'}
           upvotes={Number(thread.upvotes) || 0}
           comments={Number(thread.comments) || 0}
           url={String(thread.url) || ''}
+          subreddit={thread.subreddit}
+          isBest={idx === 0 && threads.length > 1}
         />
       ))}
     </div>
